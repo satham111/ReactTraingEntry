@@ -1,2 +1,0 @@
-# ReactTraingEntry
-Created with CodeSandbox
