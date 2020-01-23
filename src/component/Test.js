@@ -4,8 +4,13 @@ class Test extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: []
+      users: [],
+      user_id: "",
+      first_name: "",
+      last_name: "",
+      age: ""
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit = event => {
@@ -20,6 +25,16 @@ class Test extends Component {
     };
     this.state.users.push(user);
     console.log("user:" + user);
+    if (
+      this.state.user_id &&
+      this.state.first_name &&
+      this.state.last_name &&
+      this.state.age
+    ) {
+      this.state.users.push(user);
+      sessionStorage.setItem("userData", JSON.stringify(this.state.users));
+      alert("User Added Successfully");
+    }
   };
 
   render() {

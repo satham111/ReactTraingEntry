@@ -6,3 +6,11 @@
   padding-top: 100px;
   text-align: center;
 }
+.header1 {
+  background-color: rgb(57, 129, 236);
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  font-family: "Serif";
+}

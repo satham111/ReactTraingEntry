@@ -1,10 +1,11 @@
 {
-  "name": "react",
+  "name": "icdh5",
   "version": "1.0.0",
-  "description": "",
+  "description": null,
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "babel-runtime": "6.26.0",
     "bootstrap": "4.4.1",
     "dropdown": "0.2.0",
     "jquery": "3.4.1",
