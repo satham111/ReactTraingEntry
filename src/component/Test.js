@@ -5,12 +5,14 @@ class Test extends Component {
     super(props);
     this.state = {
       users: [],
+      group_id: "",
       user_id: "",
       first_name: "",
       last_name: "",
       age: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleSubmit = event => {
@@ -18,6 +20,7 @@ class Test extends Component {
     console.log("test");
     console.log(this.state);
     const user = {
+      group_id: this.state.group_id,
       user_id: this.state.user_id,
       first_name: this.state.first_name,
       last_name: this.state.last_name,
@@ -26,6 +29,7 @@ class Test extends Component {
     this.state.users.push(user);
     console.log("user:" + user);
     if (
+      this.state.group_id &&
       this.state.user_id &&
       this.state.first_name &&
       this.state.last_name &&
@@ -36,6 +40,9 @@ class Test extends Component {
       alert("User Added Successfully");
     }
   };
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
 
   render() {
     return (
@@ -52,7 +59,11 @@ class Test extends Component {
             <label for="usergroup">User Group:</label>
 
             <div className="form-group">
-              <select className="form-control" onChange={this.handleChange}>
+              <select
+                id="group_id"
+                className="form-control"
+                onChange={this.handleChange}
+              >
                 <option value="" selected>
                   Select User
                 </option>
