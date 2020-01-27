@@ -4,6 +4,7 @@ class Test extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      usergroup: ["Government", "Private", "Trust"],
       users: [],
       group_id: "",
       user_id: "",
@@ -45,8 +46,9 @@ class Test extends Component {
   }
 
   render() {
+    const { usergroup } = this.state;
     return (
-      <div class="container">
+      <div className="container">
         <div className="row">
           <div className="col-md-offset-3 col-md-6">
             <div className="text-center">
@@ -56,24 +58,26 @@ class Test extends Component {
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
-            <label for="usergroup">User Group:</label>
+            <label id="usergroup">User Group:</label>
 
             <div className="form-group">
               <select
-                id="group_id"
+                name="group_id1"
                 className="form-control"
                 onChange={this.handleChange}
               >
-                <option value="" selected>
-                  Select User
-                </option>
-                <option href> Government Sector </option>
-                <option value="all">Private Sector</option>
-                <option value="all">Trust Sector</option>
+                {usergroup.map((usergroups, key) => {
+                  return (
+                    <option id="group_id" key={key} value={usergroups}>
+                      {" "}
+                      {usergroups}{" "}
+                    </option>
+                  );
+                })}
               </select>
             </div>
             <div className="form-group">
-              <label id="userid">Employee Id:</label>
+              <label name="userid">Employee Id:</label>
 
               <input
                 type="user_id"
@@ -87,7 +91,7 @@ class Test extends Component {
               />
             </div>
             <div className="form-group">
-              <label for="firstName">First Name :</label>
+              <label name="firstName">First Name :</label>
 
               <input
                 className="form-control"
@@ -101,7 +105,7 @@ class Test extends Component {
             </div>
 
             <div className="form-group">
-              <label for="lastName">Last Name :</label>
+              <label name="lastName">Last Name :</label>
 
               <input
                 className="form-control"
@@ -114,7 +118,7 @@ class Test extends Component {
               />
             </div>
             <div className="form-group">
-              <label for="age">Age :</label>
+              <label name="age">Age :</label>
 
               <input
                 className="form-control"
