@@ -58,11 +58,11 @@ class Test extends Component {
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
-            <label id="usergroup">User Group:</label>
+            <label id="usergroup1">User Group:</label>
 
             <div className="form-group">
               <select
-                name="group_id1"
+                name="group_id"
                 className="form-control"
                 onChange={this.handleChange}
               >
