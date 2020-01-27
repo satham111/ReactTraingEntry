@@ -48,12 +48,10 @@ class Test extends Component {
   render() {
     const { usergroup } = this.state;
     return (
-      <div className="container">
+      <div name="test" className="container">
         <div className="row">
           <div className="col-md-offset-3 col-md-6">
-            <div className="text-center">
-              <h1 className="texalign">Registration Form</h1>
-            </div>
+            <div className="text-center" />
           </div>
         </div>
         <form onSubmit={this.handleSubmit}>
@@ -68,7 +66,7 @@ class Test extends Component {
               >
                 {usergroup.map((usergroups, key) => {
                   return (
-                    <option id="group_id" key={key} value={usergroups}>
+                    <option name="group_id" key={key} value={usergroups}>
                       {" "}
                       {usergroups}{" "}
                     </option>
