@@ -6,8 +6,8 @@ import AddUser from "./component/AddUser";
 const Routes = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/home" component={Home} />
-      <Route path="/add" component={AddUser} />
+      <Route exact path="/add" component={Home} />
+      <Route exact path="/adduser" component={Home} />
     </Switch>
   </BrowserRouter>
 );

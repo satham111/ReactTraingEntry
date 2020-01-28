@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavItem, NavLink, Collapse } from "reactstrap";
 
 class Header extends Component {
   render() {
@@ -7,9 +8,9 @@ class Header extends Component {
       color: "white"
     };
     return (
-      <div className="header1">
+      <div id="test" className="header1">
         <span>Add Details</span>
-        <a href="/Home" className="float-right" style={titlestyle}>
+        <a href="/add" className="float-right" style={titlestyle}>
           Query Screen?
         </a>
       </div>
